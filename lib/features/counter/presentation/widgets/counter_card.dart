@@ -24,7 +24,7 @@ class CounterCard extends StatelessWidget {
           children: [
             Text(
               "$value", // ✅ added comma
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
             ),
 
             SizedBox(height: 20),
@@ -32,11 +32,33 @@ class CounterCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: onDecrement, child: Text('-')),
+                ElevatedButton(
+                  onPressed: onDecrement,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  child: Text('-'),
+                ),
 
                 SizedBox(width: 20),
 
-                ElevatedButton(onPressed: onIncrement, child: Text('+')),
+                ElevatedButton(
+                  onPressed: onIncrement,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  child: Text('+'),
+                ),
               ],
             ),
           ],
