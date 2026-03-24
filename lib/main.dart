@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/counter/presentation/pages/counter_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,8 +43,10 @@ class _CounterPageState extends State<CounterPage> {
 
       body: Center(
         child: Card(
-          elevation: 8,
-          margin: EdgeInsets.all(20),
+          elevation: 8, //shadow - elavation
+          margin: EdgeInsets.all(
+            20,
+          ), //apply 20px on all sides - top, bottom, left, right
           child: Padding(
             padding: EdgeInsets.all(20),
             child: Column(
