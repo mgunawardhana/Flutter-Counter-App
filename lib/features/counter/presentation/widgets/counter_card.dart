@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+class CounterCard extends StatelessWidget {
+  final int value;
+  final VoidCallback onIncrement;
+  final VoidCallback onDecrement;
+
+  const CounterCard({
+    super.key, // good practice
+    required this.value,
+    required this.onIncrement,
+    required this.onDecrement,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 8,
+      margin: EdgeInsets.all(20),
+      child: Padding(
+        padding: EdgeInsets.all(20), // ✅ fixed here
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "$value", // ✅ added comma
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+
+            SizedBox(height: 20),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: onDecrement, child: Text('-')),
+
+                SizedBox(width: 20),
+
+                ElevatedButton(onPressed: onIncrement, child: Text('+')),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
